@@ -58,8 +58,8 @@ py main.py
 ## Strategi Pencarian Solusi
 Untuk menyelesaikan Sudoku, algoritma yang dipilih adalah **Backtracking**. Mula-mula akan dicari letak cell kosong pada sudoku.
 Lalu coba untuk memasukkan angka antara 1 sampai dengan 9 ke cell teresbut. Jika tidak terdapat angka tersebut pada kolom, baris, dan kotak yang sama, maka lanjutkan pengisian kota kosong selanjutnya. Jika ditemukan jalan buntu, lakukan backtracking untuk kembali ke langkah sebelumnya. Lakukan terus menerus hingga seluruh cell terisi dengan angka.<br>
-Kompleksitas Waktu: O(9^(n*n))<br>
-Kompleksitas Ruang: O(n*n)<br>
+Kompleksitas Waktu: O(9^(n\*n))<br>
+Kompleksitas Ruang: O(n\*n)<br>
 Alasan penggunaan algortima backtracking:
 * Kompleksitasnya lebih rendah dibanding bruteforce
 * Pemilihan angka yang akan diletakkan di cell kosong lebih cerdas dengan memeriksa terlebih dahulu angka-angka di setiap kolom, baris, dan kotak.
@@ -68,8 +68,8 @@ pada bruteforce jika ditemukan jalan buntu, kita harus mengulangi semuanya dari 
 
 ## Pengerjaan Bonus
 Untuk bonus saya menggunakan library openCV, imutils, dan pytesseract. 
-* OpenCV digunakan untuk mengekstrasi gambar sudoku. Kelebihan openCV adalah openCV sudah menjadi library yang populer dan banayk digunakan, sehingga cukup mudah untuk mempelajarinya dan fungsi yang disediakannya juga lengkap. Kekurangannya adalah openCV tidak didukung di beberapa bahasa berbasis .NET seperti C# dan Visual Basic.
-* imutils digunakan untuk melakukan resize ukuran gambar. Kelebihannya adalah mudah instalasi dan digunakan.
+* OpenCV digunakan untuk mengekstrasi gambar sudoku. Kelebihan openCV adalah openCV sudah menjadi library yang populer dan banyak digunakan, sehingga cukup mudah untuk mempelajarinya dan fungsi yang disediakannya juga lengkap. Kekurangannya adalah openCV tidak didukung di beberapa bahasa berbasis .NET seperti C# dan Visual Basic.
+* imutils digunakan untuk melakukan resize ukuran gambar agar gambar lebih mudah diolah. Kelebihannya adalah mudah instalasi dan digunakan.
 * pytesseract untuk mengenali dan mendeteksi angka pada kotak sudoku.
 Kelebihannya dengan library ini tidak diperlukan data trainning untuk mesin mempelajari dan mengenali bentuk
 dari setiap angka. Kekurangannya adalah set up tesseract cukup menyulitkan dan memakan waktu.
