@@ -40,7 +40,7 @@ pip install pytesseract
 * https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20200328.exe (Windows 64 bit)
 (sumber: https://github.com/UB-Mannheim/tesseract/wiki)
 2. Perhatikan tesseract path saat instalasi. Path default adalah: C:\Users\USER\AppData\Local\Tesseract-OCR.
-3. Ubah script pada file extractImage.py di folder sesuai dengan path instalasi tesseract
+3. Ubah script pada file extractImage.py di folder src menjadi sesuai dengan path instalasi tesseract
 <br> <img src="img/tesseract.png"><br>
 4. Donwload file eng.traineddata dari https://github.com/tesseract-ocr/tessdata/blob/master/eng.traineddata 
 5. Tempatkan file tersebut ke direktori  C:\Users\USER\AppData\Local\Tesseract-OCR\tessdata (replace file yang lama).
