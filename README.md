@@ -27,16 +27,64 @@ Anda adalah Mr. Khun, saat ini Anda tergabung bersama tim Sweet & Sour untuk men
 | 3 | Apabila mengerjakan bonus, tuliskan library yang digunakan serta alasan penggunaannya dan kelebihan serta kekurangnnya menurut Anda |
 | 4 | Tuliskan referensi (berupa link atau judul buku beserta halamannya) yang membantu Anda dalam mengerjakan tugas ini |
 
+## Cara Penggunaan Program
+### Prerequisites
+1. Python 3
+2. OpenCV
+```
+pip install OpenCV
+```
+3. imutils
+```
+pip install imutils
+```
+4. pytesseract
+```
+pip install pytesseract
+```
+### Install tesseract
+1. Install tesseract dengan windows installer pada: 
+* https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w32-setup-v5.0.0-alpha.20200328.exe (Windows 32 bit)
+* https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.0-alpha.20200328.exe (Windows 64 bit)
+(sumber: https://github.com/UB-Mannheim/tesseract/wiki)
+2. Perhatikan tesseract path saat instalasi. Path default adalah: C:\Users\USER\AppData\Local\Tesseract-OCR.
+3. Ubah script pada file extractImage.py di folder sesuai dengan path instalasi tesseract
+<br> <img src="img/tesseract.png"><br>
+4. Donwload file eng.traineddata dari https://github.com/tesseract-ocr/tessdata/blob/master/eng.traineddata 
+5. Tempatkan file tersebut ke direktori  C:\Users\USER\AppData\Local\Tesseract-OCR\tessdata (replace file yang lama).
 
-## Komponen Penilaian 
-| No | Komponen |
-| ---- | ---- |
-| 1 | Kebenaran program dan fungsionalitasnya |
-| 2 | Algoritma yang digunakan beserta alasan penggunaannya | 
-| 3 | AKerapihan kode dan struktur repository |
-| 4 | Kejelasan dan kerapihan readme |
+### Run the Program
+1. Buka cmd di folder src
+2. Ketikkan perintah
+```
+py main.py
+```
+untuk menjalankan program utama
+3. Pilih menu (1-3)
+4. Masukkan file testcase sesuai format yang diminta (.txt atau .png)
+5. Hasil akan ditampilkan pada layar cmd sekaligus disimpan pada folder result dalam file .txt
 
+## Strategi Pencarian Solusi
+Untuk menyelesaikan Sudoku, algoritma yang dipilih adalah **Backtracking**. Mula-mula akan dicari letak cell kosong pada sudoku.
+Lalu coba untuk memasukkan angka antara 1 sampai dengan 9 ke cell teresbut. Jika tidak terdapat angka tersebut pada kolom, baris, dan kotak yang sama, maka lanjutkan pengisian kota kosong selanjutnya. Jika ditemukan jalan buntu, lakukan backtracking untuk kembali ke langkah sebelumnya. Lakukan terus menerus hingga seluruh cell terisi dengan angka.<br>
+Kompleksitas Waktu: O(9^(n*n))<br>
+Kompleksitas Ruang: O(n*n)<br>
+Alasan penggunaan algortima backtracking:
+* Kompleksitasnya lebih rendah dibanding bruteforce
+* Pemilihan angka yang akan diletakkan di cell kosong lebih cerdas dengan memeriksa terlebih dahulu angka-angka di setiap kolom, baris, dan kotak.
+* Jika menemui jalan buntu, dapat dilakukan backtracking ke langkah sebelumnya dan mencoba opsi lain, sedangkan
+pada bruteforce jika ditemukan jalan buntu, kita harus mengulangi semuanya dari awal.
 
-## Pengumpulan
-Lakukan merge request hasil fork Anda ke repository ini, informasi selanjutnya mengenai demo akan diberitahukan oleh asisten.
+## Pengerjaan Bonus
+Untuk bonus saya menggunakan library openCV, imutils, dan pytesseract. 
+* OpenCV digunakan untuk mengekstrasi gambar sudoku. Kelebihan openCV adalah karena openCV sudah menjadi library yang populer dan banayk digunakan, sehingga cukup mudah untuk mempelajarinya dan fungsi yang disediakannya juga lengkap sehingga cukup untuk mengekstrasi gambar sudoku. Kekurangannya menurut saya 
+* imutils untuk melakukan resize ukuran gambar.
+* pytesseract untuk mengenali dan mendeteksi angka pada kotak sudoku.
+Kelebihannya dengan library ini tidak diperlukan data trainning untuk mesin mempelajari dan mengenali bentuk
+dari setiap angka. Kekurangannya adalah set up tesseract cukup menyulitkan dan memakan waktu.
+
+## Referensi
+1. https://github.com/aakashjhawar/SolveSudoku
+2. https://github.com/KleinSamuel/sudoku-solver
+
 
