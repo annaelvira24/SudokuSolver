@@ -19,14 +19,6 @@ Anda adalah Mr. Khun, saat ini Anda tergabung bersama tim Sweet & Sour untuk men
 | 7 | Program diletakkan pada directory src, kemudian file pengujian diletakkan pada directory test, dan hasil pengujian berupa screenshot diletakkan pada directory result | Wajib |
 | 8 | Program dikejakan secara individu, Anda boleh mencari referensi dari manapun namun tidak diperkenankan bekerja sama | Wajib |
 
-#### Edit file readme setelah fork repository ini sehingga mencakup :
-| No | Spesifikasi |
-| ---- | ---- |
-| 1 | Cara penggunaan program, seperti cara untuk kompilasi serta command yang dapat diterima program |
-| 2 | Strategi pencarian solusi yang digunakan dan alasan penggunaannya secara lengkap, termasuk kompleksitas algoritmanya | 
-| 3 | Apabila mengerjakan bonus, tuliskan library yang digunakan serta alasan penggunaannya dan kelebihan serta kekurangnnya menurut Anda |
-| 4 | Tuliskan referensi (berupa link atau judul buku beserta halamannya) yang membantu Anda dalam mengerjakan tugas ini |
-
 ## Cara Penggunaan Program
 ### Prerequisites
 1. Python 3
@@ -55,11 +47,10 @@ pip install pytesseract
 
 ### Run the Program
 1. Buka cmd di folder src
-2. Ketikkan perintah
+2. Ketikkan perintah berikut untuk menjalankan program utama
 ```
 py main.py
 ```
-untuk menjalankan program utama
 3. Pilih menu (1-3)
 4. Masukkan file testcase sesuai format yang diminta (.txt atau .png)
 5. Hasil akan ditampilkan pada layar cmd sekaligus disimpan pada folder result dalam file .txt
@@ -77,8 +68,8 @@ pada bruteforce jika ditemukan jalan buntu, kita harus mengulangi semuanya dari 
 
 ## Pengerjaan Bonus
 Untuk bonus saya menggunakan library openCV, imutils, dan pytesseract. 
-* OpenCV digunakan untuk mengekstrasi gambar sudoku. Kelebihan openCV adalah karena openCV sudah menjadi library yang populer dan banayk digunakan, sehingga cukup mudah untuk mempelajarinya dan fungsi yang disediakannya juga lengkap sehingga cukup untuk mengekstrasi gambar sudoku. Kekurangannya menurut saya 
-* imutils untuk melakukan resize ukuran gambar.
+* OpenCV digunakan untuk mengekstrasi gambar sudoku. Kelebihan openCV adalah openCV sudah menjadi library yang populer dan banayk digunakan, sehingga cukup mudah untuk mempelajarinya dan fungsi yang disediakannya juga lengkap. Kekurangannya adalah openCV tidak didukung di beberapa bahasa berbasis .NET seperti C# dan Visual Basic.
+* imutils digunakan untuk melakukan resize ukuran gambar. Kelebihannya adalah mudah instalasi dan digunakan.
 * pytesseract untuk mengenali dan mendeteksi angka pada kotak sudoku.
 Kelebihannya dengan library ini tidak diperlukan data trainning untuk mesin mempelajari dan mengenali bentuk
 dari setiap angka. Kekurangannya adalah set up tesseract cukup menyulitkan dan memakan waktu.
